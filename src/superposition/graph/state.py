@@ -17,4 +17,8 @@ class AgentState(TypedDict):
 
 class ResearcherPayload(TypedDict):
     # What one Send hands one researcher. A researcher started by Send gets ONLY this, not AgentState.
+    # Both IDs: the questions table's key is (inquiry_id, id), so a question ID is only unique
+    # within one inquiry. Together they find the question row (wording, hypothesis_id) and tell
+    # the researcher which inquiry to write its findings under.
     question_id: str
+    inquiry_id: str
