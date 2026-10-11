@@ -1,0 +1,28 @@
+[project]
+name = "superposition"
+version = "0.1.0"
+description = "A strategiser for big decisions: interview, research until the value of information runs out, return only tasks."
+readme = "README.md"
+authors = [
+    { name = "Dan Fletcher", email = "57096365+danrfletcher@users.noreply.github.com" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "langgraph>=1.2.14",
+    "mcp>=2,<3",
+    "numpy>=2.5.4",
+    "pydantic>=2.14.0",
+    "pyyaml>=6.0.3",
+]
+
+[build-system]
+requires = ["uv_build>=0.12.17,<0.13.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+]
+
+[project.scripts]
+superposition-mcp = "superposition.mcp_server:main"
